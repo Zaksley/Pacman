@@ -7,6 +7,7 @@ TagManager:
   - Fruit
   - Pellet
   - Ghost
+  - PowerPellet
   layers:
   - Default
   - TransparentFX
