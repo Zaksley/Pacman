@@ -56,6 +56,11 @@ public class MapSelector : MonoBehaviour
         }
     }
 
+    public void GetBackToMenu()
+    {
+        SceneManager.LoadScene("Menu"); 
+    }
+
     public void ExitGame()
     {
         Application.Quit();
