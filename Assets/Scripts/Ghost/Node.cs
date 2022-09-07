@@ -12,7 +12,6 @@ public class Node : MonoBehaviour
 
     private LayerMask nodeMask;
     public List<Vector2> availableDirections = new List<Vector2>();
-    public string collidername;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,14 +23,14 @@ public class Node : MonoBehaviour
     }
     void CheckDirectionAvailable(Vector2 direction)
     {
-        RaycastHit2D hitdata = Physics2D.Raycast(gameObject.transform.position, direction, 0.5f,nodeMask);
-        Debug.DrawRay(gameObject.transform.position, direction*0.5f, Color.red, 30f);
+        RaycastHit2D hitdata = Physics2D.Raycast(gameObject.transform.position, direction, 2f);
+        //Debug.DrawRay(gameObject.transform.position, direction*2f, Color.red, 30f);
         if (hitdata.collider == null)
         {
 
             availableDirections.Add(direction);
         }
-        else collidername = hitdata.collider.name;
+        
 
     }
 }
