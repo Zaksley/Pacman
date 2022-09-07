@@ -43,7 +43,7 @@ public class MapSelector : MonoBehaviour
         switch (_mapSelected)
         {
             case 0:
-                SceneManager.LoadScene("Pacman"); 
+                SceneManager.LoadScene("Ghost"); 
                 break;
             
             case 1:
