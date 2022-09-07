@@ -9184,7 +9184,7 @@ GameObject:
   - component: {fileID: 1745915762}
   - component: {fileID: 1745915761}
   m_Layer: 0
-  m_Name: Fond-noir-1920x1080
+  m_Name: Backgound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
