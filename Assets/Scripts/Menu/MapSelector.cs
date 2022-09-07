@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
+using UnityEngine.SceneManagement;
 
 public class MapSelector : MonoBehaviour
 {
@@ -39,7 +40,25 @@ public class MapSelector : MonoBehaviour
     
     public void PlayGame()
     {
-        
+        switch (_mapSelected)
+        {
+            case 0:
+                SceneManager.LoadScene("Pacman"); 
+                break;
+            
+            case 1:
+                SceneManager.LoadScene("Map2"); 
+                break; 
+            
+            case 2:
+                SceneManager.LoadScene("Map3");
+                break; 
+        }
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
 }
