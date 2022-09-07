@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GhostDirection : MonoBehaviour
 {
-    private Vector2 directionToTake;
+    public Vector2 directionToTake;
     private MovementController ghostMovement;
     private GhostController ghostController;
+
 
     private void Start()
     {
@@ -25,8 +26,8 @@ public class GhostDirection : MonoBehaviour
             Debug.Log(directionToTake);
             //ghostController.newDirection = directionToTake;
 
-            //ghostMovement.SetDirection(directionToTake);
-            transform.position += (new Vector3(directionToTake.x,directionToTake.y)*4*Time.deltaTime);
+            ghostMovement.SetDirection(directionToTake);
+            //transform.position += (new Vector3(directionToTake.x,directionToTake.y)*4*Time.deltaTime);
 
         }
     }
