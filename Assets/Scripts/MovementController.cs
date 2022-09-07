@@ -56,7 +56,7 @@ public class MovementController : MonoBehaviour
     {
         if (forcedDirection || !Occupied(direction))
         {
-            Direction = direction;
+            this.Direction = direction;
             NextDirection = Vector2.zero; 
         }
         else

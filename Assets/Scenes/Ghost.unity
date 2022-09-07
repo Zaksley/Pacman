@@ -136,9 +136,10 @@ GameObject:
   - component: {fileID: 24800046}
   - component: {fileID: 24800045}
   - component: {fileID: 24800044}
-  - component: {fileID: 24800049}
   - component: {fileID: 24800050}
-  m_Layer: 0
+  - component: {fileID: 24800051}
+  - component: {fileID: 24800052}
+  m_Layer: 7
   m_Name: Red Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +153,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24800043}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ee729eaa5bda544db46230bc6f6537f, type: 3}
   m_Name: 
@@ -162,7 +163,7 @@ MonoBehaviour:
   InitialDirection: {x: 0, y: 1}
   _obstacleLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 512
 --- !u!50 &24800045
 Rigidbody2D:
   serializedVersion: 4
@@ -179,7 +180,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 15391118861a4924e8fa2b3845337482, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -244,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24800043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: 3.08, z: -0.36}
+  m_LocalPosition: {x: 7.5, y: 3.81, z: -0.36}
   m_LocalScale: {x: 2.6481206, y: 2.321845, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -252,32 +253,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &24800049
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 24800043}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00066510774, y: 0.0037934668}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.056511987, y: 0.05705885}
-  m_EdgeRadius: 0
 --- !u!114 &24800050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,6 +265,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0713617ed30e6c44c957d072449c2135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &24800051
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24800043}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.11
+--- !u!114 &24800052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24800043}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b1d9c8edccc91741830fe78e37b135f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialDirection: {x: 1, y: 0}
+  speed: 1
+  newDirection: {x: 1, y: 0}
 --- !u!1 &72364046
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +393,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &179486123
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -534,7 +539,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &309614429
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -650,7 +654,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &329169998
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3365,7 +3368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &374025935
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9643,7 +9645,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &585803988
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9759,7 +9760,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &593125230
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9838,7 +9838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610073566}
   - component: {fileID: 610073567}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ghost_Eyes_Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10017,7 +10017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &971722336
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10133,7 +10132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &978121535
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10249,7 +10247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1035537171
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10365,7 +10362,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1045920563
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10570,7 +10566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1170263935
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10686,7 +10681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1233972979
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10802,7 +10796,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1396312803
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10949,7 +10942,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1489905333
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11065,7 +11057,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1581462367
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11181,7 +11172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1628582051
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12168,7 +12158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1880534285
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12284,7 +12273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &1973274310
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12400,7 +12388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableDirections: []
-  collidername: 
 --- !u!58 &2127727922
 CircleCollider2D:
   m_ObjectHideFlags: 0
