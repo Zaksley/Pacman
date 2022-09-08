@@ -72,14 +72,16 @@ public class MovementController : MonoBehaviour
         var distance = 1.5f;
         var multiplayer = 0.75f; 
         
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * multiplayer, angle, direction, distance, _obstacleLayer);
-        
+        // Special case Doors
         if (_doorLayer != null)
         {
             var hitDoor = Physics2D.BoxCast(transform.position, Vector2.one * multiplayer, angle, direction, distance, _doorLayer);
-            return hitDoor.collider != null; 
+            
+            if (hitDoor.collider != null)
+                return true;
         }
         
-        return hit.collider != null; 
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * multiplayer, angle, direction, distance, _obstacleLayer);
+        return hit.collider != null;
     }
 }
