@@ -16,6 +16,6 @@ public class GhostController : MonoBehaviour
     private void Update()
     {
         transform.position += (new Vector3(newDirection.x, newDirection.y)*speed*Time.deltaTime);
-        Debug.Log("controller"+newDirection);
+
     }
 }
