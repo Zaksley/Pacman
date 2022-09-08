@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour
 
     public Vector2 InitialDirection;
     [SerializeField] private LayerMask _obstacleLayer;
+    [SerializeField] private LayerMask _doorLayer; 
 
     public Vector2 Direction { get; private set; }
     public Vector2 NextDirection { get; private set; }
@@ -67,7 +68,18 @@ public class MovementController : MonoBehaviour
 
     public bool Occupied(Vector2 direction)
     {
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, direction, 1.5f, _obstacleLayer);
+        var angle = 0f;
+        var distance = 1.5f;
+        var multiplayer = 0.75f; 
+        
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * multiplayer, angle, direction, distance, _obstacleLayer);
+        
+        if (_doorLayer != null)
+        {
+            var hitDoor = Physics2D.BoxCast(transform.position, Vector2.one * multiplayer, angle, direction, distance, _doorLayer);
+            return hitDoor.collider != null; 
+        }
+        
         return hit.collider != null; 
     }
 }

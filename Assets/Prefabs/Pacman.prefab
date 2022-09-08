@@ -145,6 +145,9 @@ MonoBehaviour:
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
+  _doorLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &6834311856796617381
 MonoBehaviour:
   m_ObjectHideFlags: 0
