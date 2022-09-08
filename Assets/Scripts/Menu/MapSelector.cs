@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
 using UnityEngine.SceneManagement;
@@ -55,10 +53,4 @@ public class MapSelector : MonoBehaviour
                 break; 
         }
     }
-
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
-
 }
