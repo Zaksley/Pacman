@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Ghost.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 1e8115ed1d975874f86d6791cc948e14
+  - enabled: 1
+    path: Assets/Scenes/GameOver Scene.unity
+    guid: 2be5efef1e15dd242a99a7ed139be48b
+  - enabled: 1
+    path: Assets/Scenes/Win Scene.unity
+    guid: 7c8aafd856d378c479dae1145dd5ed40
+  - enabled: 1
+    path: Assets/Scenes/Map2.unity
+    guid: 4566dc0ad6cefa647a265664a5d1ad82
+  - enabled: 1
+    path: Assets/Scenes/Map3.unity
+    guid: aa27086f8b7fad04fa54a8d465087d56
+  - enabled: 1
+    path: Assets/Scenes/Pacman Main Game.unity
+    guid: a40d331557a78084fb7c56dd0b599bf4
   m_configObjects: {}

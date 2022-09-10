@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ScoreManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,8 +8,7 @@ public class GameManager : MonoBehaviour
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
-
-
+    
     public int score { get; private set; }
     
     private void Start()
@@ -61,8 +61,7 @@ public class GameManager : MonoBehaviour
         this.pacman.gameObject.SetActive(false);
     }
 
-
-    private void SetScore(int score)
+    public void SetScore(int score)
     {
         this.score = score;
     }
