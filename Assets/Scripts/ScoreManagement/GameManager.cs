@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using ScoreManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
-    
+    public static int endScore;
+
     public int score { get; private set; }
     
     private void Start()
@@ -49,16 +51,9 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        // Pour avoir game over, pacman doit mourir. On pourra rajouter d'autres fins possibles
-        
-        // désactive les ghosts
-        for (int i = 0; i < this.ghosts.Length; i++)
-        {
-            this.ghosts[i].gameObject.SetActive(false);
-        }
-
-        // désactive pacman
         this.pacman.gameObject.SetActive(false);
+        GameManager.endScore = this.score;
+        SceneManager.LoadScene("GameOver Scene", LoadSceneMode.Single);
     }
 
     public void SetScore(int score)
@@ -80,7 +75,8 @@ public class GameManager : MonoBehaviour
         if (!PelletsStillUp())
         {
             this.pacman.gameObject.SetActive(false);
-            Invoke(nameof(NewRound), 1.5f);
+            GameManager.endScore = this.score;
+            SceneManager.LoadScene("Win Scene", LoadSceneMode.Single);
         }
     }
 
@@ -102,5 +98,4 @@ public class GameManager : MonoBehaviour
         return false;
         //plus de pac-gommes
     }
-
 }

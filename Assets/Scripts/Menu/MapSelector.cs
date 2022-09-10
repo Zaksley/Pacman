@@ -41,7 +41,7 @@ public class MapSelector : MonoBehaviour
         switch (_mapSelected)
         {
             case 0:
-                SceneManager.LoadScene("Ghost"); 
+                SceneManager.LoadScene("Pacman Main Game"); 
                 break;
             
             case 1:
