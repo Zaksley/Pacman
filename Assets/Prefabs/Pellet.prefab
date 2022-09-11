@@ -124,3 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6dd8294f0e61a141860f39008a45ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pelletSound: {fileID: 940751294969917246, guid: 6be8e3373c1ea9143a57490f8d72ef80,
+    type: 3}
+  points: 10

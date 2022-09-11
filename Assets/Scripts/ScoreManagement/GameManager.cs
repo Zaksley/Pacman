@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource pelletSound;
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
     public void PowerPelletEaten(PowerPellet pellet)
     {
         PelletEaten(pellet);
-        // pour le moment je ne sais pas si on peut manger les ghosts
+        
     }
 
     private bool PelletsStillUp()
