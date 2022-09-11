@@ -64,8 +64,25 @@ public class GhostBase : MonoBehaviour
 
             }
         }
+
+        if (collision.gameObject == nodePosition && timeInBase < 0)
+        {
+            goOut = true;
+            if (basePosition == basePositionGhost.Left)
+            {
+                transform.position = collision.transform.position;
+                ghostController.newDirection = Vector3.right;
+            }
+            if (basePosition == basePositionGhost.Right)
+            {
+                transform.position = collision.transform.position;
+                ghostController.newDirection = Vector3.left;
+            }
+        }
+
         if (collision.gameObject == nodeCenterBase)
         {
+            transform.position = collision.transform.position;
             ghostController.newDirection = Vector3.up;
         }
 
@@ -80,20 +97,8 @@ public class GhostBase : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.gameObject == nodePosition && timeInBase < 0)
-        {
-            goOut = true;
-            if (basePosition == basePositionGhost.Left)
-            {
-                ghostController.newDirection = Vector3.right;
-            }
-            if (basePosition == basePositionGhost.Right)
-            {
-                ghostController.newDirection = Vector3.left;
-            }
-        }
+        
 
-       
     }
 
 
