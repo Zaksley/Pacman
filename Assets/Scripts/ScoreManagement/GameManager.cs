@@ -96,6 +96,11 @@ public class GameManager : MonoBehaviour
 
     public void PelletEaten(Pellet pellet)
     {
+        if (!pelletSound.isPlaying)
+        {
+            pelletSound.Play();
+        }
+
         pellet.gameObject.SetActive(false);
         SetScore(this.score + pellet.points);
         

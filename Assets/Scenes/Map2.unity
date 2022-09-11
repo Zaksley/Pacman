@@ -6357,6 +6357,11 @@ PrefabInstance:
       propertyPath: pellets
       value: 
       objectReference: {fileID: 2048772883}
+    - target: {fileID: -7115608986545955119, guid: 5a7240ecaa0d0274681a283f8fbf1968,
+        type: 3}
+      propertyPath: pelletSound
+      value: 
+      objectReference: {fileID: 1126151072}
     - target: {fileID: 1789220201990744148, guid: 5a7240ecaa0d0274681a283f8fbf1968,
         type: 3}
       propertyPath: m_Name
@@ -7575,6 +7580,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120885615}
   m_CullTransparentMesh: 1
+--- !u!82 &1126151072 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 940751294969917246, guid: 6be8e3373c1ea9143a57490f8d72ef80,
+    type: 3}
+  m_PrefabInstance: {fileID: 1576021438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1283386550
 GameObject:
   m_ObjectHideFlags: 0
@@ -7722,6 +7733,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 940751294969917246, guid: 6be8e3373c1ea9143a57490f8d72ef80,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6070155ee7cb6db47b052e63d69403ad, type: 3}
     - target: {fileID: 940751294969917246, guid: 6be8e3373c1ea9143a57490f8d72ef80,
         type: 3}
       propertyPath: m_PlayOnAwake
