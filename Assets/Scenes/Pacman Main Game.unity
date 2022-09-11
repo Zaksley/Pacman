@@ -2963,7 +2963,7 @@ Transform:
   - {fileID: 1797732052}
   - {fileID: 57370665}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -3139,8 +3139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dfd6ffefa9a6c4ebc27be04233e92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goOut: 0
-  index: 0
   basePosition: 1
   nodeCenterBase: {fileID: 1259932376}
   nodePosition: {fileID: 0}
@@ -9022,7 +9020,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -9263,7 +9261,7 @@ Transform:
   - {fileID: 822425791}
   - {fileID: 653185692}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &774386457
 GameObject:
@@ -9481,7 +9479,7 @@ PrefabInstance:
     - target: {fileID: 4694157302425898897, guid: 9345ce7174484b844b7e3007034595c5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4694157302425898897, guid: 9345ce7174484b844b7e3007034595c5,
         type: 3}
@@ -9536,7 +9534,7 @@ PrefabInstance:
     - target: {fileID: 4694157302425898901, guid: 9345ce7174484b844b7e3007034595c5,
         type: 3}
       propertyPath: m_Name
-      value: Red Ghost (1)
+      value: Red Ghost
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9345ce7174484b844b7e3007034595c5, type: 3}
@@ -10100,8 +10098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dfd6ffefa9a6c4ebc27be04233e92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goOut: 0
-  index: 0
   basePosition: 2
   nodeCenterBase: {fileID: 1259932376}
   nodePosition: {fileID: 1417124460}
@@ -10408,128 +10404,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dfd6ffefa9a6c4ebc27be04233e92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goOut: 0
-  index: 0
   basePosition: 0
   nodeCenterBase: {fileID: 1259932376}
   nodePosition: {fileID: 822425789}
   nodeEnd: {fileID: 653185690}
   timeInBase: 3
---- !u!1001 &1777324648
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2826221927785692545, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: initialDirection.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692545, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: initialDirection.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692550, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692550, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692551, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692570, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692571, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.11764705
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692571, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.22520176
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692571, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.8666667
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692574, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Ghost
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826221927785692574, guid: 496e7990faca8fe4dbd17283d670a8de,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 202702119, guid: 496e7990faca8fe4dbd17283d670a8de, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: 496e7990faca8fe4dbd17283d670a8de, type: 3}
 --- !u!1 &1797732051
 GameObject:
   m_ObjectHideFlags: 0
@@ -11651,7 +11530,7 @@ PrefabInstance:
     - target: {fileID: 144921703269301124, guid: c57a66f6161bc334ba6727ba3c3dcc41,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 144921703269301124, guid: c57a66f6161bc334ba6727ba3c3dcc41,
         type: 3}
