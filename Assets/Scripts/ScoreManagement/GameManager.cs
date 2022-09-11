@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using ScoreManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioSource pelletSound;
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
+    public static int endScore;
 
-
+    public int lives { get; private set; }
     public int score { get; private set; }
     
     private void Start()
@@ -19,6 +23,7 @@ public class GameManager : MonoBehaviour
     private void NewGame()
     {
         SetScore(0);
+        SetLives(3);
         NewRound();
     }
 
@@ -49,28 +54,33 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        // Pour avoir game over, pacman doit mourir. On pourra rajouter d'autres fins possibles
-        
-        // désactive les ghosts
-        for (int i = 0; i < this.ghosts.Length; i++)
-        {
-            this.ghosts[i].gameObject.SetActive(false);
-        }
-
-        // désactive pacman
         this.pacman.gameObject.SetActive(false);
+        GameManager.endScore = this.score;
+        SceneManager.LoadScene("GameOver Scene", LoadSceneMode.Single);
     }
 
-
-    private void SetScore(int score)
+    public void SetScore(int score)
     {
         this.score = score;
+    }
+    public void SetLives(int lives)
+    {
+        this.lives = lives;
     }
 
     public void PacmanEaten()
     {
-        // qu'une vie pour le moment
-        GameOver();
+        this.pacman.gameObject.SetActive(false);
+        SetLives(this.lives - 1);
+        if (this.lives <= 0)
+        {
+            GameOver();
+        }
+        else
+        {
+            Invoke(nameof(ResetState), 1.5f);
+        }
+        
     }
 
     public void PelletEaten(Pellet pellet)
@@ -81,14 +91,15 @@ public class GameManager : MonoBehaviour
         if (!PelletsStillUp())
         {
             this.pacman.gameObject.SetActive(false);
-            Invoke(nameof(NewRound), 1.5f);
+            GameManager.endScore = this.score;
+            SceneManager.LoadScene("Win Scene", LoadSceneMode.Single);
         }
     }
 
     public void PowerPelletEaten(PowerPellet pellet)
     {
         PelletEaten(pellet);
-        // pour le moment je ne sais pas si on peut manger les ghosts
+        
     }
 
     private bool PelletsStillUp()
@@ -103,5 +114,4 @@ public class GameManager : MonoBehaviour
         return false;
         //plus de pac-gommes
     }
-
 }

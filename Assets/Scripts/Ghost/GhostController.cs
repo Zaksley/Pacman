@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GhostController : MonoBehaviour
 {
-    [SerializeField] private Vector2 initialDirection;
+    public Vector2 initialDirection;
     [SerializeField] private float speed;
     public Vector2 newDirection;
 

@@ -8,6 +8,7 @@ TagManager:
   - Pellet
   - Ghost
   - PowerPellet
+  - WallBase
   layers:
   - Default
   - TransparentFX

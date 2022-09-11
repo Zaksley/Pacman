@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pellet : MonoBehaviour
 {
     public int points = 10;
-
+    
     protected virtual void Eat()
     {
         FindObjectOfType<GameManager>().PelletEaten(this);
@@ -16,6 +16,7 @@ public class Pellet : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Pacman"))
         {
+            //other.GetComponent<GameManager>().pelletSound.Play();
             Eat();
         }
     }

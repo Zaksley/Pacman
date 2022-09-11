@@ -10,6 +10,7 @@ public class GhostDirection : MonoBehaviour
 
     private void Start()
     {
+        gameObject.GetComponent<GhostBase>().enabled=false;
         ghostController = GetComponent<GhostController>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,29 +30,18 @@ public class GhostDirection : MonoBehaviour
 
 
 
-    Vector2 choseRandomDirection(List<Vector2> listDirection, Node node )
+    private Vector2 choseRandomDirection(List<Vector2> listDirection, Node node )
     {
         int indexRandom = Random.Range(0, listDirection.Count);
 
         if (listDirection[indexRandom] == -ghostController.newDirection)
         {
-            Debug.Log("dans le sens inverse");
             indexRandom++;
             if(indexRandom>= node.availableDirections.Count)
             {
                 indexRandom = 0;
             }
         }
-        //if (node.availableDirections[indexRandom] == -ghostMovement.Direction)
-        //{
-        //    indexRandom++;
-
-        //    // Wrap the index back around if overflowed
-        //    if (indexRandom >= node.availableDirections.Count)
-        //    {
-        //        indexRandom = 0;
-        //    }
-        //}
 
         return listDirection[indexRandom];
     }
