@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Transform pellets;
     public static int endScore;
 
+    public int lives { get; private set; }
     public int score { get; private set; }
     
     private void Start()
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     private void NewGame()
     {
         SetScore(0);
+        SetLives(3);
         NewRound();
     }
 
@@ -61,11 +63,24 @@ public class GameManager : MonoBehaviour
     {
         this.score = score;
     }
+    public void SetLives(int lives)
+    {
+        this.lives = lives;
+    }
 
     public void PacmanEaten()
     {
-        // qu'une vie pour le moment
-        GameOver();
+        this.pacman.gameObject.SetActive(false);
+        SetLives(this.lives - 1);
+        if (this.lives <= 0)
+        {
+            GameOver();
+        }
+        else
+        {
+            Invoke(nameof(ResetState), 1.5f);
+        }
+        
     }
 
     public void PelletEaten(Pellet pellet)
