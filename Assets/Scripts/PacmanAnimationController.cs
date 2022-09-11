@@ -27,7 +27,6 @@ public class PacmanAnimationController : MonoBehaviour
 
     public void PlayRun()
     {
-        Debug.Log("PlayRun");
         Reset();
         StartCoroutine(PlayAnimation(_runSprites, true, () => { }));
     }

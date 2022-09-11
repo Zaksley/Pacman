@@ -124,9 +124,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.060906112}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.24333912
+  m_Radius: 0.25
 --- !u!114 &8631918011571867299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 7.5
   _speedMultiplier: 1
-  InitialDirection: {x: 1, y: 0}
+  InitialDirection: {x: 0, y: 0}
   _obstacleLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -160,13 +160,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88dbde3682b0ab44b2ebbcc231c92c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprites:
+  _StartSprites:
+  - {fileID: 21300000, guid: b66233295cf5ffb4dbbc65610254fe1c, type: 3}
+  - {fileID: 21300000, guid: f3dc40f38f216824ebe2eeedf3e1024d, type: 3}
+  - {fileID: 21300000, guid: 0b4d9ed0a98c51f4b84be4411f18d2c3, type: 3}
+  - {fileID: 21300000, guid: 6cb26fc507dea6c40886fcd0efa5c0b5, type: 3}
+  - {fileID: 21300000, guid: 923dc80e92d5de9489be4906afa3b458, type: 3}
+  - {fileID: 21300000, guid: 0714b3a7b3b0aa84290752b5b623d833, type: 3}
+  - {fileID: 21300000, guid: bb47c6fcbe307de4f9b121a7f8c26ecc, type: 3}
+  - {fileID: 21300000, guid: aa379d755d37e12488d041daa1771945, type: 3}
+  - {fileID: 21300000, guid: 921dc70cf00349e4fa8f0e7203d2faa5, type: 3}
+  - {fileID: 21300000, guid: 5ba9662384c754c449d5fc1a5e17d8bc, type: 3}
+  - {fileID: 21300000, guid: 09972bfccfa62284b8bf0be46b2d7871, type: 3}
+  _runSprites:
   - {fileID: 21300000, guid: 14c61d9b2adaca14bba5374b90df1a57, type: 3}
   - {fileID: 21300000, guid: 1966d79c396538e47a21358cfbb646b5, type: 3}
   - {fileID: 21300000, guid: 14c61d9b2adaca14bba5374b90df1a57, type: 3}
   - {fileID: 21300000, guid: 09972bfccfa62284b8bf0be46b2d7871, type: 3}
+  _DeathSprites:
+  - {fileID: 21300000, guid: 09972bfccfa62284b8bf0be46b2d7871, type: 3}
+  - {fileID: 21300000, guid: 5ba9662384c754c449d5fc1a5e17d8bc, type: 3}
+  - {fileID: 21300000, guid: 921dc70cf00349e4fa8f0e7203d2faa5, type: 3}
+  - {fileID: 21300000, guid: aa379d755d37e12488d041daa1771945, type: 3}
+  - {fileID: 21300000, guid: bb47c6fcbe307de4f9b121a7f8c26ecc, type: 3}
+  - {fileID: 21300000, guid: 0714b3a7b3b0aa84290752b5b623d833, type: 3}
+  - {fileID: 21300000, guid: 923dc80e92d5de9489be4906afa3b458, type: 3}
+  - {fileID: 21300000, guid: 6cb26fc507dea6c40886fcd0efa5c0b5, type: 3}
+  - {fileID: 21300000, guid: 0b4d9ed0a98c51f4b84be4411f18d2c3, type: 3}
+  - {fileID: 21300000, guid: f3dc40f38f216824ebe2eeedf3e1024d, type: 3}
+  - {fileID: 21300000, guid: b66233295cf5ffb4dbbc65610254fe1c, type: 3}
+  - {fileID: 21300000, guid: 26ea531bb2faef145b8e8148d921cf65, type: 3}
   AnimationTime: 0.125
-  SpriteLoop: 1
 --- !u!114 &480317778661200115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098055ba0694dd14c88fbe4c081d1b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
 --- !u!114 &-1343826116637979336
 MonoBehaviour:
   m_ObjectHideFlags: 0
