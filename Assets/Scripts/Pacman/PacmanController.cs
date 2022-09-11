@@ -29,7 +29,12 @@ public class PacmanController : MonoBehaviour
             Rotate();
         }
     }
-
+    public void StopMoving()
+    {
+        _directionPacman = Vector2.zero;
+        _movementController.SetDirection(_directionPacman);
+        canMove = false;
+    }
     public void StartMoving()
     {
         _animationController.PlayRun();

@@ -34,7 +34,10 @@ public class PacmanAnimationController : MonoBehaviour
     public void PlayDeath()
     {
         Reset();
-        StartCoroutine(PlayAnimation(_DeathSprites, false, () => { }));
+        GetComponent<PacmanController>().StopMoving();
+
+        GameManager gm = (GameManager) GameObject.Find("GameManager").GetComponent(typeof(GameManager));
+        StartCoroutine(PlayAnimation(_DeathSprites, false, gm.ChoiceAfterDeath));
     }
 
     IEnumerator PlayAnimation(Sprite[] sprites, bool spriteLoop, Action endFunc)
@@ -61,6 +64,7 @@ public class PacmanAnimationController : MonoBehaviour
 
     private void Reset()
     {
+        StopAllCoroutines();
         AnimationFrame = 0;
     }
 }
