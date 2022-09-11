@@ -23,7 +23,7 @@ public class GhostDirection : MonoBehaviour
 
             directionToTake = choseRandomDirection(newNode.availableDirections, newNode);
             Debug.Log(directionToTake);
-            transform.position = collision.transform.position;
+            transform.position = new Vector3(collision.transform.position.x,collision.transform.position.y,transform.position.z);
             ghostController.newDirection = directionToTake;
 
         }
