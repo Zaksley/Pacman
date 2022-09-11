@@ -2051,7 +2051,7 @@ GameObject:
   - component: {fileID: 2126249501}
   - component: {fileID: 2126249500}
   m_Layer: 0
-  m_Name: Fond-noir-1920x1080 (1)
+  m_Name: Fond-noir-1920x1080
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

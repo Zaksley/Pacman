@@ -9,7 +9,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _speedMultiplier = 1.0f;
 
-    public Vector2 InitialDirection;
+    public Vector2 InitialDirection = Vector2.zero;
     [SerializeField] private LayerMask _obstacleLayer;
     [SerializeField] private LayerMask _doorLayer; 
 

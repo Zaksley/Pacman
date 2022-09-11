@@ -3,23 +3,37 @@ using UnityEngine;
 [RequireComponent(typeof(MovementController))]
 public class PacmanController : MonoBehaviour
 {
+    public bool canMove = false;
+
     private Vector2 _directionPacman;
     private MovementController _movementController;
+    private PacmanAnimationController _animationController;
 
     private void Awake()
     {
-        _movementController = GetComponent<MovementController>(); 
+        _movementController = GetComponent<MovementController>();
+        _animationController = GetComponent<PacmanAnimationController>();
     }
     
     private void Start()
     {
         _directionPacman = Vector2.zero;
+        _animationController.PlayStart();
     }
     
     private void Update()
     {
-        Move();
-        Rotate(); 
+        if(canMove)
+        {
+            Move();
+            Rotate();
+        }
+    }
+
+    public void StartMoving()
+    {
+        _animationController.PlayRun();
+        canMove = true;
     }
 
     private void Move()
