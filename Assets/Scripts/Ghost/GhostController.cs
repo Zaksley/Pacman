@@ -18,4 +18,17 @@ public class GhostController : MonoBehaviour
         transform.position += (new Vector3(newDirection.x, newDirection.y)*speed*Time.deltaTime);
 
     }
+    private void Eat()
+    {
+        FindObjectOfType<GameManager>().PacmanEaten();
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Pacman"))
+        {
+            Eat();
+        }
+    }
 }
