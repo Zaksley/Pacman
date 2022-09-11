@@ -12,8 +12,8 @@ public class GhostBase : MonoBehaviour
     }
 
     private GhostController ghostController;
-    private bool goOut = false;
-    private int index = 0;
+    public bool goOut = false;
+    public int index = 0;
     [SerializeField] private basePositionGhost basePosition;
 
     [SerializeField] GameObject nodeCenterBase;
