@@ -12,8 +12,8 @@ public class GhostBase : MonoBehaviour
     }
 
     private GhostController ghostController;
-    public bool goOut = false;
-    public int index = 0;
+    private bool goOut = false;
+    private int index = 0;
     [SerializeField] private basePositionGhost basePosition;
 
     [SerializeField] GameObject nodeCenterBase;
@@ -88,7 +88,7 @@ public class GhostBase : MonoBehaviour
 
         if (collision.gameObject == nodeEnd)
         {
-            int randDirection = Random.Range(0, 1);
+            int randDirection = Random.Range(0, 2);
             if (randDirection == 0)
             {
                 ghostController.newDirection = Vector3.right;

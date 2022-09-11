@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6415840510343502218}
   - component: {fileID: 6415840510343502219}
   - component: {fileID: 6415840510343502220}
+  - component: {fileID: 986749527}
   m_Layer: 7
   m_Name: Pinky Ghost
   m_TagString: Untagged
@@ -117,11 +118,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6415840510343502227}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0713617ed30e6c44c957d072449c2135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inBase: 1
   directionToTake: {x: 0, y: 0}
 --- !u!58 &6415840510343502219
 CircleCollider2D:
@@ -133,12 +135,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.05
 --- !u!114 &6415840510343502220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +156,25 @@ MonoBehaviour:
   initialDirection: {x: 0, y: 1}
   speed: 5
   newDirection: {x: 1, y: 0}
+--- !u!114 &986749527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415840510343502227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dfd6ffefa9a6c4ebc27be04233e92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goOut: 0
+  index: 0
+  basePosition: 1
+  nodeCenterBase: {fileID: 0}
+  nodePosition: {fileID: 0}
+  nodeEnd: {fileID: 0}
+  timeInBase: 0
 --- !u!1 &6415840510966188389
 GameObject:
   m_ObjectHideFlags: 0

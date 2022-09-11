@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 144921703269301145}
   - component: {fileID: 144921703269301144}
   - component: {fileID: 144921703269301151}
+  - component: {fileID: 744702506}
   m_Layer: 7
   m_Name: Vert Ghost
   m_TagString: Untagged
@@ -201,11 +202,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144921703269301120}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0713617ed30e6c44c957d072449c2135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inBase: 1
   directionToTake: {x: 0, y: 0}
 --- !u!58 &144921703269301144
 CircleCollider2D:
@@ -217,12 +219,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.04
+  m_Radius: 0.05
 --- !u!114 &144921703269301151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,3 +240,22 @@ MonoBehaviour:
   initialDirection: {x: 0, y: 1}
   speed: 5
   newDirection: {x: 1, y: 0}
+--- !u!114 &744702506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144921703269301120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dfd6ffefa9a6c4ebc27be04233e92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goOut: 0
+  index: 0
+  basePosition: 0
+  nodeCenterBase: {fileID: 0}
+  nodePosition: {fileID: 0}
+  nodeEnd: {fileID: 0}
+  timeInBase: 3
