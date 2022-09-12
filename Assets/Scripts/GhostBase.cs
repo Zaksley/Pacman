@@ -88,7 +88,19 @@ public class GhostBase : MonoBehaviour
 
         if (collision.gameObject == nodeEnd)
         {
-            gameObject.GetComponent<GhostDirection>().enabled=true;
+            if(true)
+            {
+                int randDirection = Random.Range(0, 2);
+                if (randDirection == 0)
+                {
+                    ghostController.newDirection = Vector3.right;
+                }
+                else
+                {
+                    ghostController.newDirection = Vector3.left;
+                }
+            }
+            gameObject.GetComponent<GhostDirection>().enabled = true;
         }
 
     }
