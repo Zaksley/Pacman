@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GhostController : MonoBehaviour
 {
+    private bool vulnerable;
+    public float vulnerableTime = 7f;
     public Vector2 initialDirection;
     [SerializeField] private float speed;
     public Vector2 newDirection;
@@ -13,6 +15,7 @@ public class GhostController : MonoBehaviour
 
     private void Start()
     {
+        vulnerable = false;
         newDirection = initialDirection;
         _animationController = GetComponent<GhostAnimationController>();
         _animationController.PlayRun();
@@ -20,6 +23,7 @@ public class GhostController : MonoBehaviour
 
     private void Update()
     {
+        FindObjectOfType<GameManager>().GhostScared = vulnerable;
         transform.position += (new Vector3(newDirection.x, newDirection.y)*speed*Time.deltaTime);
         if(newDirection == Vector2.up)
         {
@@ -45,12 +49,38 @@ public class GhostController : MonoBehaviour
 
     }
 
+    private void Eaten()
+    {
+        transform.position = GetComponent<GhostBase>().nodeCenterBase.transform.position;
+    }
+
+    public void BecomeVulnerable()
+    {
+        vulnerable = true;
+        speed = 6;
+        _animationController.PlayRunVulnerable();
+        Invoke(nameof(StopVulnerable), vulnerableTime);
+    }
+
+    public void StopVulnerable()
+    {
+        vulnerable = false;
+        speed = 5;
+        _animationController.PlayRun();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Pacman"))
         {
-            other.GetComponent<CircleCollider2D>().enabled = false;
-            Eat();
+            if(!vulnerable)
+            {
+                other.GetComponent<CircleCollider2D>().enabled = false;
+                Eat();
+            } else
+            {
+                Eaten();
+            }
         }
     }
 }

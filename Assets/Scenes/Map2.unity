@@ -5960,14 +5960,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 430377323, guid: f78f89684d68cd64ba1233bb3eff65b5, type: 3}
-      propertyPath: nodeEnd
-      value: 
-      objectReference: {fileID: 429219976}
-    - target: {fileID: 430377323, guid: f78f89684d68cd64ba1233bb3eff65b5, type: 3}
-      propertyPath: nodeCenterBase
-      value: 
-      objectReference: {fileID: 1851219932}
     - target: {fileID: 986749527, guid: f78f89684d68cd64ba1233bb3eff65b5, type: 3}
       propertyPath: nodeEnd
       value: 
@@ -6054,18 +6046,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 619548103}
     - target: {fileID: 202702119, guid: 496e7990faca8fe4dbd17283d670a8de, type: 3}
-      propertyPath: nodeCenterBase
-      value: 
-      objectReference: {fileID: 1851219932}
-    - target: {fileID: 461436213, guid: 496e7990faca8fe4dbd17283d670a8de, type: 3}
-      propertyPath: nodeEnd
-      value: 
-      objectReference: {fileID: 429219976}
-    - target: {fileID: 461436213, guid: 496e7990faca8fe4dbd17283d670a8de, type: 3}
-      propertyPath: nodePosition
-      value: 
-      objectReference: {fileID: 619548103}
-    - target: {fileID: 461436213, guid: 496e7990faca8fe4dbd17283d670a8de, type: 3}
       propertyPath: nodeCenterBase
       value: 
       objectReference: {fileID: 1851219932}
@@ -6330,18 +6310,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 628423222, guid: c57a66f6161bc334ba6727ba3c3dcc41, type: 3}
-      propertyPath: nodeEnd
-      value: 
-      objectReference: {fileID: 429219976}
-    - target: {fileID: 628423222, guid: c57a66f6161bc334ba6727ba3c3dcc41, type: 3}
-      propertyPath: nodePosition
-      value: 
-      objectReference: {fileID: 945348242}
-    - target: {fileID: 628423222, guid: c57a66f6161bc334ba6727ba3c3dcc41, type: 3}
-      propertyPath: nodeCenterBase
-      value: 
-      objectReference: {fileID: 1851219932}
     - target: {fileID: 744702506, guid: c57a66f6161bc334ba6727ba3c3dcc41, type: 3}
       propertyPath: nodeEnd
       value: 
@@ -11532,6 +11500,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 829160397, guid: 9345ce7174484b844b7e3007034595c5, type: 3}
+      propertyPath: nodeEnd
+      value: 
+      objectReference: {fileID: 429219976}
+    - target: {fileID: 829160397, guid: 9345ce7174484b844b7e3007034595c5, type: 3}
+      propertyPath: nodeCenterBase
+      value: 
+      objectReference: {fileID: 1851219932}
     - target: {fileID: 4694157302425898897, guid: 9345ce7174484b844b7e3007034595c5,
         type: 3}
       propertyPath: m_RootOrder
@@ -11592,20 +11568,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Ghost
       objectReference: {fileID: 0}
-    - target: {fileID: 8862682305548830425, guid: 9345ce7174484b844b7e3007034595c5,
-        type: 3}
-      propertyPath: nodeEnd
-      value: 
-      objectReference: {fileID: 429219976}
-    - target: {fileID: 8862682305548830425, guid: 9345ce7174484b844b7e3007034595c5,
-        type: 3}
-      propertyPath: nodePosition
-      value: 
-      objectReference: {fileID: 619548103}
-    - target: {fileID: 8862682305548830425, guid: 9345ce7174484b844b7e3007034595c5,
-        type: 3}
-      propertyPath: nodeCenterBase
-      value: 
-      objectReference: {fileID: 1851219932}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9345ce7174484b844b7e3007034595c5, type: 3}

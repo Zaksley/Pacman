@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1d9c8edccc91741830fe78e37b135f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vulnerableTime: 7
   initialDirection: {x: 0, y: 1}
   speed: 5
   newDirection: {x: 1, y: 0}
@@ -195,6 +196,11 @@ MonoBehaviour:
   _runSprites:
   - {fileID: 21300000, guid: 2a18ce12f34ca5b4ba29df000eace937, type: 3}
   - {fileID: 21300000, guid: 941f70539d44a1049aca1f2d3ec1b14d, type: 3}
+  _vulnerableRunSprites:
+  - {fileID: 21300000, guid: 28a9cebcba29bff428f392537340a8c4, type: 3}
+  - {fileID: 21300000, guid: 29812e3bfaf508e499591d81e46870c5, type: 3}
+  - {fileID: 21300000, guid: d1b40d651af152d4b83b02033f4225dc, type: 3}
+  - {fileID: 21300000, guid: d526da4f4ee9ee54689e0bdb62fe3fbc, type: 3}
   AnimationTime: 0.25
 --- !u!1 &6415840510966188389
 GameObject:

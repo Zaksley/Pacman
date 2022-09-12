@@ -10,6 +10,7 @@ public class Node : MonoBehaviour
     private Vector2 rightDirection = Vector2.right;
     private Vector2 leftDirection = Vector2.left;
     private Pacman pacman;
+    private GameManager gm;
 
     public LayerMask excludeLayers;
     public List<Vector2> availableDirections = new List<Vector2>();
@@ -27,7 +28,8 @@ public class Node : MonoBehaviour
             availableDirections.Add(direction);
         }
         pacman = GameObject.FindObjectOfType<Pacman>();
-        findPacman = GameObject.FindObjectOfType<GameManager>().GhostFollowPacman;
+        gm = GameObject.FindObjectOfType<GameManager>();
+        findPacman = gm.GhostFollowPacman;
     }
 
     void CheckDirectionAvailable(Vector2 direction)
@@ -48,9 +50,12 @@ public class Node : MonoBehaviour
             foreach (Vector2 direction in initialDirections)
             {
                 Vector2 pacmanDirection = pacman.transform.position - transform.position;
-                if(Vector2.Angle(direction, pacmanDirection) < 45)
+                if(!gm.GhostScared && Vector2.Angle(direction, pacmanDirection) < 45)
                 {
-                    
+                    availableDirections.Add(direction);
+                }
+                if(gm.GhostScared && Vector2.Angle(direction, pacmanDirection) > 45)
+                {
                     availableDirections.Add(direction);
                 }
             }

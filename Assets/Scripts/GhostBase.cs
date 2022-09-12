@@ -16,7 +16,7 @@ public class GhostBase : MonoBehaviour
     private int index = 0;
     [SerializeField] private basePositionGhost basePosition;
 
-    [SerializeField] GameObject nodeCenterBase;
+    [SerializeField] public GameObject nodeCenterBase;
     [SerializeField] GameObject nodePosition;
     [SerializeField] GameObject nodeEnd;
 

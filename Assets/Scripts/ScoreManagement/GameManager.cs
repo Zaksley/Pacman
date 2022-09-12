@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] hearts;
     public bool GhostFollowPacman;
+    public bool GhostScared;
     [SerializeField] private AudioSource pelletSound;
     [SerializeField] private AudioSource deathSound;
     [SerializeField] private AudioSource beginSound;
@@ -137,7 +138,10 @@ public class GameManager : MonoBehaviour
     public void PowerPelletEaten(PowerPellet pellet)
     {
         PelletEaten(pellet);
-        
+        foreach (GhostController gc in FindObjectsOfType<GhostController>())
+        {
+            gc.BecomeVulnerable();
+        } 
     }
 
     private bool PelletsStillUp()
