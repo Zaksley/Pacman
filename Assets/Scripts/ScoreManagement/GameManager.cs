@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public AudioSource pelletSound;
-    public Ghost[] ghosts;
+    public GameObject[] hearts;
     public Pacman pacman;
     public Transform pellets;
     public static int endScore;
@@ -46,11 +46,6 @@ public class GameManager : MonoBehaviour
 
     private void ResetState()
     {
-        // réactive les ghosts
-        for (int i = 0; i < this.ghosts.Length; i++)
-        {
-            this.ghosts[i].gameObject.SetActive(true);
-        }
 
         // réactive pacman
         this.pacman.gameObject.SetActive(true);
@@ -69,11 +64,28 @@ public class GameManager : MonoBehaviour
     {
         this.score = score;
     }
+
     public void SetLives(int lives)
     {
         this.lives = lives;
+        showHearts(lives);
+
     }
 
+    private void showHearts(int lives)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if(i >= lives)
+            {
+                hearts[i].SetActive(false);
+            }
+            else
+            {
+                hearts[i].SetActive(true);
+            }
+        }
+    }
     public void PacmanEaten()
     {
         animePacman.PlayDeath(); //ChoiceAfterDeath appelée dans PlayDeath()
