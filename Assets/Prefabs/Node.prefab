@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1587401366515326084}
   - component: {fileID: -823781869561015085}
-  - component: {fileID: -7869914483190375918}
+  - component: {fileID: 6218656216689538548}
   m_Layer: 10
   m_Name: Node
   m_TagString: Untagged
@@ -46,9 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   findPacman: 1
+  excludeLayers:
+    serializedVersion: 2
+    m_Bits: 7671
   availableDirections: []
---- !u!61 &-7869914483190375918
-BoxCollider2D:
+  initialDirections: []
+--- !u!58 &6218656216689538548
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -61,15 +65,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1}
-  m_EdgeRadius: 0
+  m_Radius: 0.05

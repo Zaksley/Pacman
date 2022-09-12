@@ -22,14 +22,12 @@ public class GhostDirection : MonoBehaviour
     {
         Debug.Log(collision.name);
         Node newNode = collision.GetComponent<Node>();
-
+        
         if (newNode != null)
         {
-
             directionToTake = choseRandomDirection(newNode.availableDirections, newNode);
-            transform.position = new Vector3(collision.transform.position.x,collision.transform.position.y,transform.position.z);
             ghostController.newDirection = directionToTake;
-
+            transform.position = new Vector3(collision.transform.position.x, collision.transform.position.y, transform.position.z);
         }
     }
 
@@ -49,8 +47,13 @@ public class GhostDirection : MonoBehaviour
                     indexRandom = 0;
                 }
             }
+            return listDirection[indexRandom];
+        } else
+        {
+            Debug.Log("No direction available !!!");
+            return -ghostController.newDirection;
         }
 
-        return listDirection[indexRandom];
+        
     }
 }

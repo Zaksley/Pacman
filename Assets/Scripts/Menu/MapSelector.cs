@@ -7,7 +7,7 @@ public class MapSelector : MonoBehaviour
     [SerializeField] private Button[] _maps;
     [SerializeField] private Button[] _difficulties;
     private int _mapSelected = 0;
-    private int _difficulty = 0;
+    private int _difficultySelected = 0;
 
     public ColorBlock defaultColor;
     public ColorBlock selectedColor;
@@ -20,7 +20,7 @@ public class MapSelector : MonoBehaviour
 
     public void UpdateDifficulty(int difficulty)
     {
-        _difficulty = difficulty;
+        _difficultySelected = difficulty;
         SetDifficultiesColors();
         PlayerPrefs.SetInt("GhostFollowPacman", difficulty);
     }
@@ -29,7 +29,7 @@ public class MapSelector : MonoBehaviour
     {
         for (int iDif = 0; iDif < _difficulties.Length; iDif++)
         {
-            if (iDif != _mapSelected)
+            if (iDif != _difficultySelected)
             {
                 _difficulties[iDif].colors = defaultColor;
             }

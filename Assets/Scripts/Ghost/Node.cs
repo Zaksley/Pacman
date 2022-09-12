@@ -11,14 +11,13 @@ public class Node : MonoBehaviour
     private Vector2 leftDirection = Vector2.left;
     private Pacman pacman;
 
-    private LayerMask nodeMask;
+    public LayerMask excludeLayers;
     public List<Vector2> availableDirections = new List<Vector2>();
     public List<Vector2> initialDirections = new List<Vector2>();
 
     // Start is called before the first frame update
     void Start()
     {    
-        nodeMask = gameObject.layer;
         CheckDirectionAvailable(upDirection);
         CheckDirectionAvailable(downDirection);
         CheckDirectionAvailable(rightDirection);
@@ -33,8 +32,8 @@ public class Node : MonoBehaviour
 
     void CheckDirectionAvailable(Vector2 direction)
     {
-        RaycastHit2D hitdata = Physics2D.Raycast(gameObject.transform.position, direction, 2f);
-        //Debug.DrawRay(gameObject.transform.position, direction*2f, Color.red, 30f);
+        RaycastHit2D hitdata = Physics2D.Raycast(gameObject.transform.position, direction, 2f, ~excludeLayers);
+        Debug.DrawRay(gameObject.transform.position, direction*2f, Color.red, 30f);
         if (hitdata.collider == null)
         {
             initialDirections.Add(direction);
