@@ -38,6 +38,7 @@ public class GhostController : MonoBehaviour
             EyeSpriteRenderer.sprite = _sprites[3];
         }
     }
+
     private void Eat()
     {
         FindObjectOfType<GameManager>().PacmanEaten();
