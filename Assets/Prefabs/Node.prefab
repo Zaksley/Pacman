@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c11daf46262ea0044a4e189f75068d0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  findPacman: 1
   availableDirections: []
 --- !u!61 &-7869914483190375918
 BoxCollider2D:

@@ -35,16 +35,19 @@ public class GhostDirection : MonoBehaviour
 
 
 
-    private Vector2 choseRandomDirection(List<Vector2> listDirection, Node node )
+    private Vector2 choseRandomDirection(List<Vector2> listDirection, Node node)
     {
         int indexRandom = Random.Range(0, listDirection.Count);
 
-        if (node.availableDirections.Count > 1 && listDirection[indexRandom] == -ghostController.newDirection)
+        if (node.availableDirections.Count > 1)
         {
-            indexRandom++;
-            if(indexRandom>= node.availableDirections.Count)
+            while (listDirection[indexRandom] == -ghostController.newDirection)
             {
-                indexRandom = 0;
+                indexRandom++;
+                if (indexRandom >= node.availableDirections.Count)
+                {
+                    indexRandom = 0;
+                }
             }
         }
 

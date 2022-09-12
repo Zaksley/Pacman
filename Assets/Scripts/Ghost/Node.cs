@@ -4,33 +4,66 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-
+    public bool findPacman = false;
     private Vector2 upDirection = Vector2.up;
     private Vector2 downDirection = Vector2.down;
     private Vector2 rightDirection = Vector2.right;
     private Vector2 leftDirection = Vector2.left;
+    private Pacman pacman;
 
     private LayerMask nodeMask;
     public List<Vector2> availableDirections = new List<Vector2>();
+    public List<Vector2> initialDirections = new List<Vector2>();
+
     // Start is called before the first frame update
     void Start()
-    {
+    {    
         nodeMask = gameObject.layer;
         CheckDirectionAvailable(upDirection);
         CheckDirectionAvailable(downDirection);
         CheckDirectionAvailable(rightDirection);
-        CheckDirectionAvailable(leftDirection);
+        CheckDirectionAvailable(leftDirection);;
+        foreach (Vector2 direction in initialDirections)
+        {
+            availableDirections.Add(direction);
+        }
+        pacman = GameObject.FindObjectOfType<Pacman>();
     }
+
     void CheckDirectionAvailable(Vector2 direction)
     {
         RaycastHit2D hitdata = Physics2D.Raycast(gameObject.transform.position, direction, 2f);
         //Debug.DrawRay(gameObject.transform.position, direction*2f, Color.red, 30f);
         if (hitdata.collider == null)
         {
-
-            availableDirections.Add(direction);
+            initialDirections.Add(direction);
         }
-        
-
     }
+
+
+    private void Update()
+    {
+        if(findPacman)
+        {
+            foreach (Vector2 direction in initialDirections)
+            {
+                Vector2 pacmanDirection = pacman.transform.position - transform.position;
+                if(Vector2.Angle(direction, pacmanDirection) < 45)
+                {
+                    
+                    availableDirections.Add(direction);
+                }
+            }
+
+            if(availableDirections.Count > 1000)
+            {
+                availableDirections.Clear();
+                foreach (Vector2 direction in initialDirections)
+                {
+                   availableDirections.Add(direction);
+                }
+            }
+        }
+    }
+    
 }
