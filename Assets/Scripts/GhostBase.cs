@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GhostBase : MonoBehaviour
 {
@@ -88,7 +89,7 @@ public class GhostBase : MonoBehaviour
 
         if (collision.gameObject == nodeEnd)
         {
-            if(true)
+            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Map2"))
             {
                 int randDirection = Random.Range(0, 2);
                 if (randDirection == 0)

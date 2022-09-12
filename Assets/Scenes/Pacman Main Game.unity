@@ -9832,6 +9832,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 829160397, guid: 9345ce7174484b844b7e3007034595c5, type: 3}
+      propertyPath: nodeEnd
+      value: 
+      objectReference: {fileID: 653185690}
+    - target: {fileID: 829160397, guid: 9345ce7174484b844b7e3007034595c5, type: 3}
+      propertyPath: nodeCenterBase
+      value: 
+      objectReference: {fileID: 1259932376}
     - target: {fileID: 4694157302425898890, guid: 9345ce7174484b844b7e3007034595c5,
         type: 3}
       propertyPath: initialDirection.x
