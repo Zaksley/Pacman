@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] hearts;
+    public bool GhostFollowPacman;
     [SerializeField] private AudioSource pelletSound;
     [SerializeField] private AudioSource deathSound;
     [SerializeField] private AudioSource beginSound;
@@ -20,6 +21,10 @@ public class GameManager : MonoBehaviour
 
     private PacmanAnimationController animePacman;
 
+    private void Awake()
+    {
+        GhostFollowPacman = PlayerPrefs.GetInt("GhostFollowPacman") == 1 ? true : false;
+    }
 
     private void Start()
     {

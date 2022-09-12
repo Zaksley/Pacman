@@ -28,6 +28,7 @@ public class Node : MonoBehaviour
             availableDirections.Add(direction);
         }
         pacman = GameObject.FindObjectOfType<Pacman>();
+        findPacman = GameObject.FindObjectOfType<GameManager>().GhostFollowPacman;
     }
 
     void CheckDirectionAvailable(Vector2 direction)
