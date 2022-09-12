@@ -59,6 +59,7 @@ public class GhostController : MonoBehaviour
         vulnerable = true;
         speed = 6;
         _animationController.PlayRunVulnerable();
+        CancelInvoke();
         Invoke(nameof(StopVulnerable), vulnerableTime);
     }
 
