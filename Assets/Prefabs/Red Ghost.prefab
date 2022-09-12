@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 4694157302425898892}
   - component: {fileID: 4694157302425898893}
   - component: {fileID: 4694157302425898890}
+  - component: {fileID: 1828435337}
   m_Layer: 7
   m_Name: Red Ghost
   m_TagString: Untagged
@@ -206,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0713617ed30e6c44c957d072449c2135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inBase: 0
   directionToTake: {x: 0, y: 0}
 --- !u!58 &4694157302425898893
 CircleCollider2D:
@@ -235,6 +237,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1d9c8edccc91741830fe78e37b135f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDirection: {x: 1, y: 0}
+  initialDirection: {x: 0, y: 1}
   speed: 5
   newDirection: {x: 1, y: 0}
+  EyeSpriteRenderer: {fileID: 4694157301970394977}
+  _sprites:
+  - {fileID: 21300000, guid: ace970db20f713e4286a4d512f34c0ed, type: 3}
+  - {fileID: 21300000, guid: 423df7e99d9b1384881e3ebd5d6509cc, type: 3}
+  - {fileID: 21300000, guid: 81bb4e1f67f9b4e40b7389913ce5138c, type: 3}
+  - {fileID: 21300000, guid: 205228c0c29456849a0490f479c23d9d, type: 3}
+--- !u!114 &1828435337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694157302425898901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd571ed13e2284c8410346d8d2e5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runSprites:
+  - {fileID: 21300000, guid: 2a18ce12f34ca5b4ba29df000eace937, type: 3}
+  - {fileID: 21300000, guid: 941f70539d44a1049aca1f2d3ec1b14d, type: 3}
+  AnimationTime: 0.25

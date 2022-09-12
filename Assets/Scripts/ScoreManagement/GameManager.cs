@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioSource pelletSound;
     public GameObject[] hearts;
+    [SerializeField] private AudioSource pelletSound;
+    [SerializeField] private AudioSource deathSound;
+    [SerializeField] private AudioSource beginSound;
     public Pacman pacman;
     public Transform pellets;
     public static int endScore;
+
 
     public int lives { get; private set; }
     public int score { get; private set; }
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour
     {
 
         // réactive pacman
+        beginSound.Play();
         this.pacman.gameObject.SetActive(true);
         animePacman.PlayStart();
 
@@ -88,6 +92,7 @@ public class GameManager : MonoBehaviour
     }
     public void PacmanEaten()
     {
+        deathSound.Play();
         animePacman.PlayDeath(); //ChoiceAfterDeath appelée dans PlayDeath()
         
     }

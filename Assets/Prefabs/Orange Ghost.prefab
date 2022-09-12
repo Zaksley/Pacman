@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2826221927785692550}
   - component: {fileID: 2826221927785692545}
   - component: {fileID: 202702119}
+  - component: {fileID: 410797316}
   m_Layer: 7
   m_Name: Orange Ghost
   m_TagString: Untagged
@@ -156,6 +157,12 @@ MonoBehaviour:
   initialDirection: {x: 0, y: 1}
   speed: 5
   newDirection: {x: 1, y: 0}
+  EyeSpriteRenderer: {fileID: 2826221928274161002}
+  _sprites:
+  - {fileID: 21300000, guid: ace970db20f713e4286a4d512f34c0ed, type: 3}
+  - {fileID: 21300000, guid: 423df7e99d9b1384881e3ebd5d6509cc, type: 3}
+  - {fileID: 21300000, guid: 81bb4e1f67f9b4e40b7389913ce5138c, type: 3}
+  - {fileID: 21300000, guid: 205228c0c29456849a0490f479c23d9d, type: 3}
 --- !u!114 &202702119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,13 +175,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4dfd6ffefa9a6c4ebc27be04233e92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goOut: 0
-  index: 0
   basePosition: 2
   nodeCenterBase: {fileID: 0}
   nodePosition: {fileID: 0}
   nodeEnd: {fileID: 0}
   timeInBase: 6
+--- !u!114 &410797316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2826221927785692574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24cd571ed13e2284c8410346d8d2e5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _runSprites:
+  - {fileID: 21300000, guid: 2a18ce12f34ca5b4ba29df000eace937, type: 3}
+  - {fileID: 21300000, guid: 941f70539d44a1049aca1f2d3ec1b14d, type: 3}
+  AnimationTime: 0.25
 --- !u!1 &2826221928274161000
 GameObject:
   m_ObjectHideFlags: 0
