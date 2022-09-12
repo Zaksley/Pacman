@@ -12,8 +12,8 @@ public class GhostBase : MonoBehaviour
     }
 
     private GhostController ghostController;
-    public bool goOut = false;
-    public int index = 0;
+    private bool goOut = false;
+    private int index = 0;
     [SerializeField] private basePositionGhost basePosition;
 
     [SerializeField] GameObject nodeCenterBase;
@@ -64,14 +64,39 @@ public class GhostBase : MonoBehaviour
 
             }
         }
+
+        if (collision.gameObject == nodePosition && timeInBase < 0)
+        {
+            goOut = true;
+            if (basePosition == basePositionGhost.Left)
+            {
+                transform.position = collision.transform.position;
+                ghostController.newDirection = Vector3.right;
+            }
+            if (basePosition == basePositionGhost.Right)
+            {
+                transform.position = collision.transform.position;
+                ghostController.newDirection = Vector3.left;
+            }
+        }
+
         if (collision.gameObject == nodeCenterBase)
         {
+            transform.position = collision.transform.position;
             ghostController.newDirection = Vector3.up;
         }
 
         if (collision.gameObject == nodeEnd)
         {
-            ghostController.newDirection=Vector3.right;
+            int randDirection = Random.Range(0, 2);
+            if (randDirection == 0)
+            {
+                ghostController.newDirection = Vector3.right;
+            }
+            else
+            {
+                ghostController.newDirection = Vector3.left;
+            }
             gameObject.GetComponent<GhostDirection>().enabled=true;
         }
 
@@ -80,20 +105,8 @@ public class GhostBase : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (collision.gameObject == nodePosition && timeInBase < 0)
-        {
-            goOut = true;
-            if (basePosition == basePositionGhost.Left)
-            {
-                ghostController.newDirection = Vector3.right;
-            }
-            if (basePosition == basePositionGhost.Right)
-            {
-                ghostController.newDirection = Vector3.left;
-            }
-        }
+        
 
-       
     }
 
 

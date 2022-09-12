@@ -14,9 +14,14 @@ public class GameManager : MonoBehaviour
 
     public int lives { get; private set; }
     public int score { get; private set; }
-    
+
+    private PacmanAnimationController animePacman;
+
+
     private void Start()
     {
+
+        animePacman = (PacmanAnimationController)this.pacman.gameObject.GetComponent(typeof(PacmanAnimationController));
         NewGame();
     }
 
@@ -49,6 +54,7 @@ public class GameManager : MonoBehaviour
 
         // réactive pacman
         this.pacman.gameObject.SetActive(true);
+        animePacman.PlayStart();
 
     }
 
@@ -70,6 +76,12 @@ public class GameManager : MonoBehaviour
 
     public void PacmanEaten()
     {
+        animePacman.PlayDeath(); //ChoiceAfterDeath appelée dans PlayDeath()
+        
+    }
+
+    public void ChoiceAfterDeath()
+    {
         this.pacman.gameObject.SetActive(false);
         SetLives(this.lives - 1);
         if (this.lives <= 0)
@@ -78,16 +90,20 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(ResetState), 1.5f);
+            Invoke(nameof(ResetState),0.5f);
         }
-        
     }
 
     public void PelletEaten(Pellet pellet)
     {
+        if (!pelletSound.isPlaying)
+        {
+            pelletSound.Play();
+        }
+
         pellet.gameObject.SetActive(false);
         SetScore(this.score + pellet.points);
-
+        
         if (!PelletsStillUp())
         {
             this.pacman.gameObject.SetActive(false);

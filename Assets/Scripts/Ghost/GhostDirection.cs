@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class GhostDirection : MonoBehaviour
 {
+    [SerializeField] private bool inBase;
     public Vector2 directionToTake;
     private GhostController ghostController;
 
 
     private void Start()
     {
-        gameObject.GetComponent<GhostBase>().enabled=false;
+        if (inBase)
+        {
+            gameObject.GetComponent<GhostBase>().enabled = false;
+
+        }
         ghostController = GetComponent<GhostController>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,7 +27,7 @@ public class GhostDirection : MonoBehaviour
         {
 
             directionToTake = choseRandomDirection(newNode.availableDirections, newNode);
-            Debug.Log(directionToTake);
+            transform.position = new Vector3(collision.transform.position.x,collision.transform.position.y,transform.position.z);
             ghostController.newDirection = directionToTake;
 
         }
@@ -34,7 +39,7 @@ public class GhostDirection : MonoBehaviour
     {
         int indexRandom = Random.Range(0, listDirection.Count);
 
-        if (listDirection[indexRandom] == -ghostController.newDirection)
+        if (node.availableDirections.Count > 1 && listDirection[indexRandom] == -ghostController.newDirection)
         {
             indexRandom++;
             if(indexRandom>= node.availableDirections.Count)

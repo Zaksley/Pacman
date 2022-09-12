@@ -38,4 +38,17 @@ public class GhostController : MonoBehaviour
             EyeSpriteRenderer.sprite = _sprites[3];
         }
     }
+    private void Eat()
+    {
+        FindObjectOfType<GameManager>().PacmanEaten();
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Pacman"))
+        {
+            Eat();
+        }
+    }
 }
