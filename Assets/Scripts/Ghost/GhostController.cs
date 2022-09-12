@@ -49,6 +49,7 @@ public class GhostController : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Pacman"))
         {
+            other.GetComponent<CircleCollider2D>().enabled = false;
             Eat();
         }
     }

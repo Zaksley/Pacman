@@ -38,6 +38,7 @@ public class PacmanController : MonoBehaviour
     public void StartMoving()
     {
         _animationController.PlayRun();
+        GetComponent<CircleCollider2D>().enabled = true;
         canMove = true;
     }
 

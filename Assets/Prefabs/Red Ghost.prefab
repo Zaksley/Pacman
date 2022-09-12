@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1d9c8edccc91741830fe78e37b135f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDirection: {x: 0, y: 1}
+  initialDirection: {x: 1, y: 0}
   speed: 5
   newDirection: {x: 1, y: 0}
   EyeSpriteRenderer: {fileID: 4694157301970394977}
